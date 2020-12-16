@@ -1,0 +1,22 @@
+syntax="proto3";
+package api.user.v1;
+/**
+定义请求
+ */
+message UserRequest{
+  int64 uid = 1;
+}
+/**
+定义响应
+ */
+message UserResponse{
+  string name = 1;
+  int64 age = 2;
+}
+
+/**
+定义服务
+ */
+service UserService{
+  rpc GetUser(UserRequest) returns (UserResponse);
+}
